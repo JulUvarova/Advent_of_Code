@@ -8,15 +8,15 @@ int main() {
   multiset<int> first_list{};
   multiset<int> second_list{};
 
-  ifstream fopen("data.txt");
-  if (fopen.is_open()) {
+  ifstream file("data.txt");
+  if (file.is_open()) {
     int first, second;
-    while (fopen >> first >> second) {
+    while (file >> first >> second) {
       first_list.insert(first);
       second_list.insert(second);
     }
   }
-  fopen.close();
+  file.close();
 
   int similarity = 0;
 
