@@ -14,22 +14,28 @@ std::pair<int, int> get_pair(std::string str) {
 
 void find_in_str(std::string& str, long int& mul_res) {
   std::regex rex{
-      R"(mul\(([0-9]{1,2}|[1-9][0-9]{1,2}|[0-9]{3}),([0-9]{1,2}|[1-9][0-9]{2}|[0-9]{3})\)|do\(\)|don't\(\))"};
+      "(mul\\(([0-9]{1,2}|[1-9][0-9]{1,2}|[0-9]{3}),([0-9]{1,2}|[1-9][0-9]{"
+      "2}|[0-9]{3})\\))"};
   std::sregex_iterator beg{str.cbegin(), str.cend(), rex};
   std::sregex_iterator end{};
-  bool is_do = true;
-  for (auto i = beg; i != end; ++i) {
-    const std::smatch& match = *i;
-    std::cout << match[0] << std::endl;
 
-    if (match[0] == "do()")
-      is_do = true;
-    else if (match[0] == "don't()")
-      is_do = false;
-    else if (is_do) {
-      std::pair<int, int> numbers = get_pair(i->str());
-      mul_res += numbers.first * numbers.second;
+  for (auto i = beg; i != end; ++i) {
+    std::pair<int, int> numbers = get_pair(i->str());
+    mul_res += numbers.first * numbers.second;
+  }
+}
+
+void check_instruction(std::string& str) {
+  auto start = str.find("don't()");
+    const std::string empty;
+  while (start != std::string::npos) {
+    auto end = str.find("do()", start);
+    if (end != std::string::npos) {
+        str.replace(start, end - start, empty);
+    } else {
+        str.replace(start, str.length() - start, empty);
     }
+    start = str.find("don't()");
   }
 }
 
@@ -39,9 +45,12 @@ int main() {
   std::ifstream file("data.txt");
   if (file.is_open()) {
     std::string str;
-    while (getline(file, str)) {
-      find_in_str(str, mul_res);
+    std::string line;
+    while (getline(file, line)) {
+      str.append(line);
     }
+    check_instruction(str);
+    find_in_str(str, mul_res);
   }
   file.close();
 
