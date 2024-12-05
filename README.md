@@ -8,4 +8,6 @@ My attempts to solve Advent Of Code
 | - | - |
 | 01 | :star2::star2: |
 | 02 | :star2::star2: |
-| 03 |  |
+| 03 | :star2::star2: |
+| 04 | :star2::star2: |
+| 05 |  |
