@@ -11,4 +11,4 @@ My attempts to solve Advent Of Code
 | 03 | :star2::star2: |
 | 04 | :star2::star2: |
 | 05 | :star2::star2: |
-| 06 |  |
+| 06 | :star2: |
