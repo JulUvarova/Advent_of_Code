@@ -17,10 +17,10 @@ My attempts to solve Advent Of Code
 | 09 |  |
 | 10 |  |
 | 11 | :star2::star2: |
-| 12 |  |
+| 12 | :star2: |
 | 13 |  |
 | 14 |  |
-| 15 |  |
+| 15 | :star2: |
 | 16 |  |
 | 17 |  |
 | 18 |  |
