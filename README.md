@@ -20,7 +20,7 @@ My attempts to solve Advent Of Code
 | 12 | :star2: |
 | 13 |  |
 | 14 |  |
-| 15 | :star2: |
+| 15 | :star2::star2: |
 | 16 |  |
 | 17 |  |
 | 18 |  |
